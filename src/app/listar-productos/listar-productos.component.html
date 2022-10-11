@@ -1,0 +1,36 @@
+<div class="container custom-container-2">
+    <!-- Se muestra cuando no hay producto -->
+    <div class="no-data text-center" *ngIf="Producto.length == 0">
+      <p>Aun no has agregado ningun producto!</p>
+      <button class="btn btn-outline-primary" routerLink="/crear-producto">
+        Añadir producto
+      </button>
+    </div>
+    <!-- Lista de productos, se esconde cuando no hay producto -->
+    <div *ngIf="Producto.length !== 0">
+      <h3 class="mb-3 text-center">Lista de productos</h3>
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>   
+              <th scope="col">nombre</th>
+              <th scope="col">descripcion</th>
+              <th scope="col">stock</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of Producto">
+              <td>{{ product.nombre }}</td>
+              <td>{{ product.descripcion }}</td>
+              <td>{{ product.stock }}</td>
+              <td>
+                <span class="edit" routerLink="/product-edit/{{ product.id }}"
+                  >Editar</span>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+      
+      <h3 class="mb-3 text-center">Actualizar Producto</h3>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="productData.nombre" class="form-control" placeholder="Nombre">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="productData.descripcion" class="form-control" placeholder="descripcion">
+      </div>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="productData.stock" class="form-control" placeholder="stock">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="updateProduct()">Actualizar Producto</button>
+      </div>
+      
+    </div>
+  </div>

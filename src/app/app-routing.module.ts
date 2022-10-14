@@ -9,7 +9,7 @@ const routes: Routes = [
 {path: '', pathMatch: 'full', redirectTo: 'crear-producto' },
 { path: 'crear-producto', component: CrearProductoComponent },
 { path: 'listar-productos', component: ListarProductosComponent },
-{ path: 'editar-productos/id', component: EditarProductosComponent }]
+{ path: 'editar-productos/:id', component: EditarProductosComponent }]
 
 
 @NgModule({

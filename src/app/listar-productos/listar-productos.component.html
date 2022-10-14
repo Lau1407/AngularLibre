@@ -29,7 +29,7 @@
               <td>
                 <button type="submit" class="edit" routerLink="/editar-productos/:id" >Editar</button>
 
-                <button type="button" class="delete" routerLink="/eliminar-producto">Borrar</button>             
+                <button type="button" class="delete" (click)="BorrarProducto(product.id)">Borrar</button>             
               </td>             
             </tr>
             <button type = "button" class="create" routerLink="/crear-producto">Crear</button>

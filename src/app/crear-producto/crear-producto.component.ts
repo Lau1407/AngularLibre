@@ -12,6 +12,7 @@ export class CrearProductoComponent implements OnInit {
   constructor(private productoS : ProductoService, private router : Router) {}
 
   ngOnInit() {}
+  
     agregarProducto(dataProduct: any) {
     this.productoS.createProduct(this.productDetails).subscribe((data: {}) => {
       this.router.navigate(['/listar-productos']);

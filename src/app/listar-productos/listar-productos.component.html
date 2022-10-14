@@ -10,25 +10,29 @@
     <div *ngIf="Producto.length !== 0">
       <h3 class="mb-3 text-center">Lista de productos</h3>
       <div class="col-md-12">
-        <table class="table table-bordered">
+        <table class="table table-bordered" >
           <thead>
             <tr>   
+              <th scope="col">id</th>
               <th scope="col">nombre</th>
               <th scope="col">descripcion</th>
               <th scope="col">stock</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of Producto">
+            
+            <tr *ngFor="let product of Producto">     
+              <td>{{ product.id }}</td>
               <td>{{ product.nombre }}</td>
-              <td>{{ product.descripcion }}</td>
-              <td>{{ product.stock }}</td>
+              <td>{{ product.Descripcion }}</td>
+              <td>{{ product.Stock }}</td>
               <td>
-                <span class="edit" routerLink="/product-edit/{{ product.id }}"
-                  >Editar</span>
-                
-              </td>
+                <button type="submit" class="edit" routerLink="/editar-productos/:id" >Editar</button>
+
+                <button type="button" class="delete" routerLink="/eliminar-producto">Borrar</button>             
+              </td>             
             </tr>
+            <button type = "button" class="create" routerLink="/crear-producto">Crear</button>
           </tbody>
         </table>
       </div>

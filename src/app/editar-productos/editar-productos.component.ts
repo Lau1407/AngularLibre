@@ -23,9 +23,9 @@ export class EditarProductosComponent implements OnInit {
     })
   }
   updateProduct() {
-    if(window.confirm('.......')){
-      this.productoS.updateProduct(this.id, this.productData).subscribe(data => {
-        this.router.navigate(['/products-list'])
+    if(window.confirm('Confimar cambios?')){
+      this.productoS.actualizarProducto(this.id, this.productData).subscribe(data => {
+        this.router.navigate(['/listar-productos'])
       })
     }
   }

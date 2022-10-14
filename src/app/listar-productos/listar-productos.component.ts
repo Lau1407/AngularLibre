@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../servicios/producto.service';
+import { Pipe } from '@angular/core';
 
 @Component({
   selector: 'app-listar-productos',
@@ -7,6 +8,8 @@ import { ProductoService } from '../servicios/producto.service';
   styleUrls: ['./listar-productos.component.css']
 })
 export class ListarProductosComponent implements OnInit {
+  filtro : string = '';
+
   Producto: any = [];
   constructor(private productoS : ProductoService) { }
 
@@ -19,5 +22,7 @@ export class ListarProductosComponent implements OnInit {
       this.Producto = data;
     });
   }
+  
+
 
 }

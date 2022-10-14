@@ -9,12 +9,16 @@ import { EditarProductosComponent } from './editar-productos/editar-productos.co
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ListarProductosComponent,
     EditarProductosComponent,
     CrearProductoComponent,
+   
+  
    
   ],
   imports: [

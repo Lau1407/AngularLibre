@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductoService {
-  url = 'api';
+  url = "http://127.0.0.1:8000/api";
 
   constructor(private http : HttpClient) { }
 
@@ -21,13 +21,13 @@ export class ProductoService {
 
   getProducts(): Observable<Producto> {
     return this.http
-      .get<Producto>(this.url+ '/producto_get')
+      .get<Producto>(this.url+ '/producto_get_all')
       .pipe(retry(1), catchError(this.handleError));
   }
 
   getProduct(id: any): Observable<Producto> {
     return this.http
-      .get<Producto>(this.url + '/product_get/' + id)
+      .get<Producto>(this.url + '/producto_get/' + id)
       .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -40,7 +40,7 @@ export class ProductoService {
       )
       .pipe(retry(1), catchError(this.handleError));
   }
-  updateProduct(id: any, product: any): Observable<Producto> {
+  actualizarProducto(id: any, product: any): Observable<Producto> {
     return this.http
       .put<Producto>(
         this.url + '/products/' + id,
@@ -52,7 +52,8 @@ export class ProductoService {
 
   deleteProduct(id: any) {
     return this.http
-      .delete<Producto>(this.url + '/product_delete/' + id, this.httpOptions)
+      .delete<Producto>(this.url + '/producto_delete/' + id, 
+       this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
   }
 

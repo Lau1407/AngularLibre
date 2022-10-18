@@ -3,10 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListarProductosComponent } from './listar-productos/listar-productos.component';
 import { EditarProductosComponent } from './editar-productos/editar-productos.component';
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
+import {  RegistrarComponent } from './registrar/registrar.component';
+import { LoginComponent } from './login/login.component'
+
+
+
 
 
 
@@ -17,6 +22,8 @@ import { CrearProductoComponent } from './crear-producto/crear-producto.componen
     ListarProductosComponent,
     EditarProductosComponent,
     CrearProductoComponent,
+    RegistrarComponent,
+    LoginComponent
    
   
    
@@ -25,7 +32,8 @@ import { CrearProductoComponent } from './crear-producto/crear-producto.componen
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

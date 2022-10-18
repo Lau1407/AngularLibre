@@ -27,7 +27,7 @@
               <td>{{ product.Descripcion }}</td>
               <td>{{ product.Stock }}</td>
               <td>
-                <button type="submit" class="edit" routerLink="/editar-productos/:id" >Editar</button>
+                <button type="submit" class="edit" routerLink="/editar-productos/{{ product.id }}" >Editar</button>
 
                 <button type="button" class="delete" (click)="BorrarProducto(product.id)">Borrar</button>             
               </td>             

@@ -9,7 +9,7 @@ import { EditarProductosComponent } from './editar-productos/editar-productos.co
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 import {  RegistrarComponent } from './registrar/registrar.component';
 import { LoginComponent } from './login/login.component'
-import { AuthInterceptor } from './auth.interceptor';
+
 
 
 
@@ -38,7 +38,7 @@ import { AuthInterceptor } from './auth.interceptor';
     ReactiveFormsModule
 
   ],
-  providers: [ {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

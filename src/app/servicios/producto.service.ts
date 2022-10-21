@@ -61,8 +61,9 @@ export class ProductoService {
   register(nombre:string,contrasena:string):Observable<any>{
     return this.http.post(this.url + '/crear_usuario',{nombre,contrasena})
   }
-  login(username:string,password:string):Observable<any>{
-    return this.http.post(this.url + '/login',{username,password})
+  login(nombre:string,contrasena:string):Observable<any>{
+    return this.http.post(this.url + '/login',{nombre
+,contrasena})
   }
 
   

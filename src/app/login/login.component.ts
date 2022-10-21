@@ -17,16 +17,15 @@ export class LoginComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username:['',Validators.required],
-      password:['',Validators.required],
+      nombre:['',Validators.required],
+      contrasena:['',Validators.required],
     }) 
   }
   login(){
     const formValue = this.loginForm.value
-    this.productoS.login(formValue.username,formValue.password).subscribe({next: (res) => {
+    this.productoS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {
       console.log(res)
-      localStorage.setItem('token',res.token)
-      this.router.navigate(['/'])
+      this.router.navigate(['/crear-producto'])
     },error : (err)=>{
       this.message='Wrong username or password!!'
     }})

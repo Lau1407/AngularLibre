@@ -8,7 +8,7 @@ import { Pipe } from '@angular/core';
   styleUrls: ['./listar-productos.component.css']
 })
 export class ListarProductosComponent implements OnInit {
- 
+  filtrarproducto = '';
   Producto: any = [];
   constructor(private productoS : ProductoService) { }
 

@@ -8,7 +8,7 @@ import { ProductoService } from '../servicios/producto.service';
   styleUrls: ['./crear-producto.component.css']
 })
 export class CrearProductoComponent implements OnInit {
-  @Input() productDetails = { nombre: '', descripcion: '', stock: 0 };
+  @Input() productDetails = { nombre: '', descripcion: '',categoria:'', precio:"" , stock: "" };
   constructor(private productoS : ProductoService, private router : Router) {}
 
   ngOnInit() {}

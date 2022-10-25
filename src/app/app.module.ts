@@ -8,8 +8,8 @@ import { ListarProductosComponent } from './listar-productos/listar-productos.co
 import { EditarProductosComponent } from './editar-productos/editar-productos.component';
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 import {  RegistrarComponent } from './registrar/registrar.component';
-import { LoginComponent } from './login/login.component'
-
+import { LoginComponent } from './login/login.component';
+import { FilterPipe } from './filtrarProductos/filter-product.pipe';
 
 
 
@@ -25,7 +25,8 @@ import { LoginComponent } from './login/login.component'
     EditarProductosComponent,
     CrearProductoComponent,
     RegistrarComponent,
-    LoginComponent
+    LoginComponent,
+    FilterPipe
    
   
    

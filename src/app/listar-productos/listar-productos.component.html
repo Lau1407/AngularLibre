@@ -9,6 +9,9 @@
     <!-- Lista de productos, se esconde cuando no hay producto -->
     <div *ngIf="Producto.length !== 0">
       <h3 class="mb-3 text-center">Lista de productos</h3>
+      <div class="form-group">
+        <input type="text" class="form-control" name="filtrarProducto"  placeholder="Search..." [(ngModel)]="filtrarproducto">
+      </div>
       <div class="col-md-12">
         <table class="table table-bordered" >
           <thead>
@@ -16,15 +19,19 @@
               <th scope="col">id</th>
               <th scope="col">nombre</th>
               <th scope="col">descripcion</th>
+              <th scope="col">categoria</th>
+              <th scope="col">precio</th>
               <th scope="col">stock</th>
             </tr>
           </thead>
           <tbody>
             
-            <tr *ngFor="let product of Producto">     
+            <tr *ngFor="let product of Producto | filter: filtrarproducto  ">     
               <td>{{ product.id }}</td>
               <td>{{ product.nombre }}</td>
               <td>{{ product.Descripcion }}</td>
+              <td>{{ product.Categoria }}</td>
+              <td>{{ product.Precio }}</td>
               <td>{{ product.Stock }}</td>
               <td>
                 <button type="submit" class="edit" routerLink="/editar-productos/{{ product.id }}" >Editar</button>

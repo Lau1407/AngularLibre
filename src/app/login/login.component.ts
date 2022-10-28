@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
       contrasena:['',Validators.required],
     }) 
   }
+  
   login(){
     const formValue = this.loginForm.value
     this.productoS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {

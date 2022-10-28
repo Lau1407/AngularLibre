@@ -18,10 +18,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       nombre:['',Validators.required],
-      contrasena:['',Validators.required],
+      contrasena:['',Validators.required]
+   
     }) 
   }
-  
+
   login(){
     const formValue = this.loginForm.value
     this.productoS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {

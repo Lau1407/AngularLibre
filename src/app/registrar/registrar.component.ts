@@ -21,12 +21,14 @@ export class RegistrarComponent implements OnInit {
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       nombre:['',Validators.required],
-      contrasena:['',Validators.required]
+      contrasena:['',Validators.required],
+      email:['',Validators.required],
+      localidad:['',Validators.required]
     }) 
   }
   register(){
     const formValue = this.registerForm.value
-    this.productoS.register(formValue.nombre,formValue.contrasena).subscribe({next:() => {
+    this.productoS.register(formValue.nombre,formValue.contrasena,formValue.email,formValue.localidad ).subscribe({next:() => {
       this.success = true
     }})
   }

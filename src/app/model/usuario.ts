@@ -1,5 +1,8 @@
 export interface Usuario {
     id:number;
     nombre: string;
-    password : string;
+    contrasena : string;
+    email:string;
+    localidad:string;
+   
 }

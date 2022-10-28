@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ProductoService } from '../servicios/producto.service'; 
+import { UsuarioService } from '../servicios/usuario.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   message = '';
   constructor(
     private formBuilder: FormBuilder,
-    private productoS: ProductoService,
+    private usuarioS: UsuarioService,
     private router:Router
   ) { }
   ngOnInit(): void {
@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit {
 
   login(){
     const formValue = this.loginForm.value
-    this.productoS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {
+    this.usuarioS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {
       console.log(res)
-      this.router.navigate(['/crear-producto'])
+      this.router.navigate(['/listar-productos'])
     },error : (err)=>{
       this.message='Wrong username or password!!'
     }})

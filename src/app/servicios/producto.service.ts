@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Producto } from '../model/producto';
 import { retry, catchError } from 'rxjs/operators';
-import { Usuario } from '../model/usuario';
 
 
 @Injectable({
@@ -58,13 +57,7 @@ export class ProductoService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  register(nombre:string,contrasena:string,email:string,localidad:string):Observable<any>{
-    return this.http.post(this.url + '/crear_usuario',{nombre,contrasena,email,localidad})
-  }
-  login(nombre:string,contrasena:string,):Observable<any>{
-    return this.http.post(this.url + '/login',{nombre
-,contrasena})
-  }
+ 
 
   
 

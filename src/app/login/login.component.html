@@ -1,14 +1,29 @@
-<form class="form-signin" [formGroup]='loginForm' (submit)="login()">
-    <h1 class="h3 mb-3 fw-normal">Login</h1>
-    <div class="form-floating">
-      <input class="form-control" id="floatingInput" formControlName="nombre">
-      <label for="floatingInput">Nombre</label>
+<form  [formGroup]='loginForm' (submit)="login()">
+  <div id="contenedor">
+    <div id="central">
+        <div id="login">
+            <div class="titulo">
+                Bienvenido
+            </div>
+    <div >
+      <div >
+      <label for="floatingInput">Username</label>
+      <input  id="floatingInput" formControlName="nombre">
     </div>
-    <div class="form-floating">
-      <input type="contrasena" class="form-control" id="floatingPassword" formControlName="contrasena">
-      <label for="floatingPassword">Contraseña</label>
+      <label for="floatingPassword">Password</label>
+      <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena">
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
     <br><br>
     <p *ngIf="message" class="alert alert-danger alert-dismissible fade show">{{message}}</p>
+    <div class="pie-form">
+      <a href="#">¿Perdiste tu contraseña?</a>
+      <a href="#" routerLink="/registrar">¿No tienes Cuenta? Registrate</a>
+  </div>
+</div>
+<div class="inferior">
+</div>
+</div>
+</div>
+
   </form>

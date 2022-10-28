@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ProductoService } from '../servicios/producto.service';
+import { UsuarioService } from '../servicios/usuario.service';
 
 @Component({
   selector: 'app-registrar',
@@ -16,7 +16,7 @@ export class RegistrarComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private productoS: ProductoService
+    private usuarioS: UsuarioService
   ) { }
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -28,7 +28,7 @@ export class RegistrarComponent implements OnInit {
   }
   register(){
     const formValue = this.registerForm.value
-    this.productoS.register(formValue.nombre,formValue.contrasena,formValue.email,formValue.localidad ).subscribe({next:() => {
+    this.usuarioS.register(formValue.nombre,formValue.contrasena,formValue.email,formValue.localidad ).subscribe({next:() => {
       this.success = true
     }})
   }

@@ -1,26 +1,22 @@
-<form class="form-signin" [formGroup]='registerForm' (click)="register()">
-  <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
-  <div class="form-floating">
-    <input class="form-control" id="floatingInput" formControlName="nombre">
-    <label for="floatingInput">Nombre</label>
+<form  class='registro' (click)="register()">
+  <h1 >Registrarse</h1>
+  <div >
+    <input class="form-control"  type="text" formControlName="nombre" placeholder="Nombre">
   </div>
-  <div class="form-floating">
-    <input type="contrasena" class="form-control" id="floatingPassword" formControlName="contrasena">
-    <label for="floatingPassword">Contraseña</label>
+  <div >
+    <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña">
   </div>
-  <div class="form-floating">
-    <input type="email" class="form-control" id="floatingEmail" formControlName="email">
-    <label for="floatingPassword">Email</label>
+  <div >
+    <input type="mail" class="form-control" id="floatingEmail" formControlName="email" placeholder="Email">
   </div>
-  <div class="form-floating">
-    <input type="localidad" class="form-control" id="floatingLocalidad" formControlName="localidad">
-    <label for="floatingPassword">Localidad</label>
+  <div >
+    <input type="text" class="form-control" id="floatingLocalidad" formControlName="localidad" placeholder="Localidad">
   </div>
-  <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+  <button  type="submit" class="registerbutton">Registrarse</button>
   <br>
   <br>
   <div *ngIf="success" style="color: green;">Registration Successful!! Please <button routerLink="/login" [disabled]="!registerForm.valid">Login</button></div>
-  <button class="login2" routerLink="/login">Ya tenes usuario?</button>
+  <button class="loginbutton" routerLink="/login"  >Ya tenes usuario?</button>
   
 </form>
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from '../model/usuario';
 import { Observable, throwError } from 'rxjs';
+import { retry, catchError } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
   })
@@ -15,6 +16,7 @@ import { Observable, throwError } from 'rxjs';
         'Content-Type': 'application/json',
       }),
     };
+
     register(nombre:string,contrasena:string,email:string,localidad:string):Observable<any>{
         return this.http.post(this.url + '/crear_usuario',{nombre,contrasena,email,localidad})
       }

@@ -57,6 +57,11 @@ export class ProductoService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  getCategory(): Observable<Producto>{
+    return this.http.get<Producto>(this.url + '/categoria_get')
+    .pipe(retry(1), catchError(this.handleError));
+  }
+  
  
 
   

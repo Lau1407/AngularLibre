@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Producto } from '../model/producto';
 import { ProductoService } from '../servicios/producto.service';
 
 @Component({
@@ -9,10 +10,17 @@ import { ProductoService } from '../servicios/producto.service';
 })
 export class CrearProductoComponent implements OnInit {
   @Input() productDetails = { nombre: '', descripcion: '',categoria:'', precio:"" , stock: "" };
+  Producto: any=[];
   constructor(private productoS : ProductoService, private router : Router) {}
 
-  ngOnInit() {}
-  
+  ngOnInit() {
+     this.cargarCategorias();
+  }
+  cargarCategorias(){
+    return this.productoS.getCategory().subscribe((data: {}) => {
+      this.Producto = data;
+    });
+  }
     agregarProducto(dataProduct: any) {
     this.productoS.createProduct(this.productDetails).subscribe((data: {}) => {
       this.router.navigate(['/listar-productos']);

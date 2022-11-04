@@ -1,4 +1,4 @@
-<form   class='registro' (click)="register()">
+<form  [formGroup]="registerForm" class='registro' (click)="register()">
   <h1 >Registrarse</h1>
   <div >
     <input  class="form-control"  type="text" formControlName="nombre" placeholder="Nombre">

@@ -23,6 +23,7 @@ import { retry, catchError } from 'rxjs/operators';
       login(nombre:string,contrasena:string):Observable<any>{
         return this.http.post(this.url + '/login',{nombre
     ,contrasena})
+    
       }
     
       

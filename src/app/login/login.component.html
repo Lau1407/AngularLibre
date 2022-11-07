@@ -1,4 +1,4 @@
-<form  [formGroup]='loginForm' (submit)="login()">
+<form preventDefault [formGroup]='loginForm' (submit)="login()">
   <div id="contenedor">
     <div id="central">
         <div id="login">
@@ -11,7 +11,7 @@
       <input  id="floatingInput" formControlName="nombre">
     </div>
       <label for="floatingPassword">Password</label>
-      <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena">
+      <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" >
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
     <br><br>

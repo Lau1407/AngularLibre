@@ -1,21 +1,22 @@
 <form  [formGroup]="registerForm" class='registro' (click)="register()">
   <h1 >Registrarse</h1>
   <div >
-    <input  class="form-control"  type="text" formControlName="nombre" placeholder="Nombre">
+    <input  class="form-control"  type="text" formControlName="nombre" placeholder="Nombre" maxlength="10" >
   </div>
   <div >
-    <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña">
+    <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña" maxlength="10" >
   </div>
   <div >
-    <input type="mail" class="form-control" id="floatingEmail" formControlName="email" placeholder="Email">
+    <input type="mail" class="form-control" id="floatingEmail" formControlName="email" placeholder="Email" >
   </div>
   <div >
-    <input type="text" class="form-control" id="floatingLocalidad" formControlName="localidad" placeholder="Localidad">
+    <input type="text" class="form-control" id="floatingLocalidad" formControlName="localidad" placeholder="Localidad" >
   </div>
   <button  type="submit" class="registerbutton">Registrarse</button>
   <br>
   <br>
-  <div *ngIf="success" style="color: green;">Registration Successful!! Please <button routerLink="/login" [disabled]="!registerForm.valid">Login</button></div>
+  <div *ngIf="success" style="color: green;"><button class="loginbutton"routerLink="/login" [disabled]="!registerForm.valid">Login</button></div>
+  <br>
   <button class="loginbutton" routerLink="/login"  >Ya tenes usuario?</button>
   
 </form>

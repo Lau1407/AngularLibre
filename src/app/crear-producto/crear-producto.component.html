@@ -2,10 +2,10 @@
     <div class="col-md-12">
       <h3 class="mb-3 text-center">Crear Producto</h3>
       <div class="form-group">
-        <input type="text" [(ngModel)]="productDetails.nombre" class="form-control" placeholder="Nombre">
+        <input type="text" [(ngModel)]="productDetails.nombre" class="form-control" placeholder="Nombre" maxlength="30">
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="productDetails.descripcion" class="form-control" placeholder="Descripcion">
+        <input type="text" [(ngModel)]="productDetails.descripcion" class="form-control" placeholder="Descripcion" maxlength="200">
       </div>
       <div class="form-group" >
         <select  [(ngModel)]="productDetails.categoria" class="form-control"  >
@@ -13,11 +13,13 @@
        </select> 
       </div> 
       <div class="form-group">
-        <input type="text" [(ngModel)]="productDetails.precio" class="form-control" placeholder="Precio">
+        <input type="text" [(ngModel)]="productDetails.precio" class="form-control" placeholder="Precio" maxlength="7">
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="productDetails.stock" class="form-control" placeholder="Stock">
+        <input type="text" [(ngModel)]="productDetails.stock" class="form-control" placeholder="Stock" maxlength="4">
       </div>
+
+
       <div class="form-group">
         <button class="btn btn-success btn-lg btn-block" (click)="agregarProducto(productDetails)">Crear Producto</button>
         <button class="btn btn-success btn-lg btn-block" routerLink="/listar-productos">Lista De Productos</button>

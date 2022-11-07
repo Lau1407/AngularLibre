@@ -10,6 +10,8 @@ import { CrearProductoComponent } from './crear-producto/crear-producto.componen
 import {  RegistrarComponent } from './registrar/registrar.component';
 import { LoginComponent } from './login/login.component';
 import { FilterPipe } from './filtrarProductos/filter-product.pipe';
+import { ComprarProductoComponent } from './comprar-producto/comprar-producto.component';
+
 
 
 
@@ -27,6 +29,8 @@ import { FilterPipe } from './filtrarProductos/filter-product.pipe';
     RegistrarComponent,
     LoginComponent,
     FilterPipe,
+    ComprarProductoComponent,
+
    
    
   

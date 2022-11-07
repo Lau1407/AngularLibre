@@ -6,6 +6,7 @@ import { EditarProductosComponent } from './editar-productos/editar-productos.co
 import { ListarProductosComponent } from './listar-productos/listar-productos.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
+import { ComprarProductoComponent } from './comprar-producto/comprar-producto.component';
 
 
 
@@ -13,7 +14,7 @@ import { RegistrarComponent } from './registrar/registrar.component';
 
 const routes: Routes = [
 {path: '', pathMatch: 'full', redirectTo: 'registrar' },
-
+{ path: 'comprar-producto/:id', component: ComprarProductoComponent },
 { path: 'crear-producto', component: CrearProductoComponent },
 { path: 'listar-productos', component: ListarProductosComponent },
 { path: 'editar-productos/:id', component: EditarProductosComponent },

@@ -34,12 +34,13 @@
               <td>{{ product.Precio }}</td>
               <td>{{ product.Stock }}</td>
               <td>
-                <button type="submit" class="edit" routerLink="/editar-productos/{{ product.id }}" >Editar</button>
+                <button type="submit" class="btn btn-outline-primary" routerLink="/editar-productos/{{ product.id }}" >Editar</button>
 
-                <button type="button" class="delete" (click)="BorrarProducto(product.id)">Borrar</button>             
+                <button type="button" class="btn btn-outline-primary" (click)="BorrarProducto(product.id)">Borrar</button>    
+                <button type="button" class="btn btn-outline-primary"  routerLink="/comprar-producto/{{product.id}}">Comprar</button>    
               </td>             
             </tr>
-            <button type = "button" class="create" routerLink="/crear-producto">Crear</button>
+            <button type = "button" class="btn btn-outline-primary" routerLink="/crear-producto">Crear</button>
           </tbody>
         </table>
       </div>

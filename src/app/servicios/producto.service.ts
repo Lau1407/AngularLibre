@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Producto } from '../model/producto';
 import { retry, catchError } from 'rxjs/operators';
+import { AnimateTimings } from '@angular/animations';
 
 
 @Injectable({
@@ -60,6 +61,12 @@ export class ProductoService {
   getCategory(): Observable<Producto>{
     return this.http.get<Producto>(this.url + '/categoria_get')
     .pipe(retry(1), catchError(this.handleError));
+  }
+
+  actualizarStock(id:any, product:any): Observable<Producto>{
+    return this.http.put<Producto>(this.url + '/stock/' + id,
+    JSON.stringify(product))
+
   }
   
  

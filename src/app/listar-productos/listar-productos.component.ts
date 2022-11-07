@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../servicios/producto.service';
 import { Pipe } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-listar-productos',
@@ -10,7 +12,10 @@ import { Pipe } from '@angular/core';
 export class ListarProductosComponent implements OnInit {
   filtrarproducto = '';
   Producto: any = [];
-  constructor(private productoS : ProductoService) { }
+  id = this.actRoute.snapshot.params['id'];
+  constructor(public productoS: ProductoService,
+    public actRoute: ActivatedRoute,
+    public router: Router ) { }
 
   ngOnInit(): void {
     this.cargarProductos();
@@ -23,9 +28,22 @@ export class ListarProductosComponent implements OnInit {
   }
 
   BorrarProducto(id : string){
+  Swal.fire({
+    title: 'Producto Eliminado Correctamente',
+    icon: 'success',
+    confirmButtonColor: '#3085d6',
+    confirmButtonText: 'Ok'
+  })
+  
+     
     this.productoS.deleteProduct(id)
     .subscribe(data=>{
       this.cargarProductos();
     })
+
   }
-}
+
+
+  }
+
+

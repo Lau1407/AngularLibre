@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
     this.usuarioS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {
       console.log(res)
       this.router.navigate(['/listar-productos'])
-    },error : (err)=>{
-      this.message='Wrong username or password!!'
+    },error : (res)=>{
+      this.message='Error en usuario y/o contraseña'
     }})
   }
 }

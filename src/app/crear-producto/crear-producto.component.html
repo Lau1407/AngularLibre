@@ -7,11 +7,15 @@
       <div class="form-group">
         <input type="text" [(ngModel)]="productDetails.descripcion" class="form-control" placeholder="Descripcion" maxlength="200">
       </div>
+
+      
       <div class="form-group" >
         <select  [(ngModel)]="productDetails.categoria" class="form-control"  >
           <option  *ngFor="let producto of Producto" >{{producto.nombre}}</option>
        </select> 
-      </div> 
+      </div>
+      
+      
       <div class="form-group">
         <input type="text" [(ngModel)]="productDetails.precio" class="form-control" placeholder="Precio" maxlength="7">
       </div>

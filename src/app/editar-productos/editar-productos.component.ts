@@ -10,7 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditarProductosComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
-  productData: any = {};
+  productData: any=[];
+  categoria:any=[];
+
   constructor(
     public productoS: ProductoService,
     public actRoute: ActivatedRoute,
@@ -18,13 +20,27 @@ export class EditarProductosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+   this.cargarCategorias()
+   this.actualizarProd();
+
+  }
+
+  actualizarProd(){
     this.productoS.getProduct(this.id).subscribe((data: {}) => {
       this.productData = data;
     })
   }
+
+  cargarCategorias(){
+    return this.productoS.getCategory().subscribe((data: {}) => {
+      this.categoria = data;
+    });
+  }
+
+
   updateProduct() {
     if(window.confirm('Confimar cambios?')){
-      this.productoS.actualizarProducto(this.id, this.productData).subscribe(data => {
+      this.productoS.actualizarProducto(this.id, this.productData, this.categoria).subscribe(data => {
         this.router.navigate(['/listar-productos'])
       })
     }

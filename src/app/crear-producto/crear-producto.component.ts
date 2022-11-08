@@ -9,7 +9,7 @@ import { ProductoService } from '../servicios/producto.service';
   styleUrls: ['./crear-producto.component.css']
 })
 export class CrearProductoComponent implements OnInit {
-  @Input() productDetails = { nombre: '', descripcion: '',categoria:'', precio:"" , stock: "", img:"" };
+  @Input() productDetails = { nombre: '', descripcion: '',categoria:'', precio:"" , stock: "" };
   Producto: any=[];
   constructor(private productoS : ProductoService, private router : Router) {}
 

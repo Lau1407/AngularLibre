@@ -41,7 +41,7 @@ export class ProductoService {
       )
       .pipe(retry(1), catchError(this.handleError));
   }
-  actualizarProducto(id: any, product: any): Observable<Producto> {
+  actualizarProducto(id: any, product: any, categoria:any): Observable<Producto> {
     return this.http
       .put<Producto>(
         this.url + '/products/' + id,

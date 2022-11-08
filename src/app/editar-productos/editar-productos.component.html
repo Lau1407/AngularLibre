@@ -4,19 +4,23 @@
       <h3 class="mb-3 text-center">Actualizar Producto</h3>
       
       <div class="form-group">
-        <input type="text" [(ngModel)]="productData.nombre" class="form-control" placeholder="Nombre">
+        <input type="text" [(ngModel)]="productData.nombre" class="form-control" placeholder="Nombre" maxlength="30">
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="productData.Descripcion" class="form-control" placeholder="Descripcion">
+        <input type="text" [(ngModel)]="productData.Descripcion" class="form-control" placeholder="Descripcion" maxlength="200">
+      </div>
+
+      <div class="form-group" >
+        <select  [(ngModel)]="productData.categoria" class="form-control"  >
+          <option  *ngFor="let producto of categoria" >{{producto.nombre}}</option>
+       </select> 
+      </div>
+
+      <div class="form-group">
+        <input type="text" [(ngModel)]="productData.Precio" class="form-control" placeholder="Precio" maxlength="7">
       </div>
       <div class="form-group">
-        <input type="text" [(ngModel)]="productData.categoria" class="form-control" placeholder="Categoria">
-      </div>
-      <div class="form-group">
-        <input type="text" [(ngModel)]="productData.precio" class="form-control" placeholder="Precio">
-      </div>
-      <div class="form-group">
-        <input type="text" [(ngModel)]="productData.Stock" class="form-control" placeholder="Stock">
+        <input type="text" [(ngModel)]="productData.Stock" class="form-control" placeholder="Stock" maxlength="4">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-success btn-lg btn-block" (click)="updateProduct()">Actualizar Producto</button>

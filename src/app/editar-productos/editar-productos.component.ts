@@ -20,7 +20,7 @@ export class EditarProductosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-   this.cargarCategorias()
+   this.cargarCategorias();
    this.actualizarProd();
 
   }

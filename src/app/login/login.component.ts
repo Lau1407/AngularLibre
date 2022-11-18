@@ -10,6 +10,10 @@ import { UsuarioService } from '../servicios/usuario.service';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   message = '';
+isSuccessful: true;
+
+  
+  
   constructor(
     private formBuilder: FormBuilder,
     private usuarioS: UsuarioService,
@@ -26,7 +30,8 @@ export class LoginComponent implements OnInit {
   login(){
     const formValue = this.loginForm.value
     this.usuarioS.login(formValue.nombre,formValue.contrasena).subscribe({next: (res) => {
-      console.log(res)
+      console.log(res),
+      this.isSuccessful = true
       this.router.navigate(['/listar-productos'])
     },error : (res)=>{
       this.message='Error en usuario y/o contraseña'

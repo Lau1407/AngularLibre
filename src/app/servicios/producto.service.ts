@@ -64,7 +64,7 @@ export class ProductoService {
   }
 
   actualizarStock(id:any, product:any): Observable<Producto>{
-    return this.http.put<Producto>(this.url + '/stock/' + id,
+    return this.http.post<Producto>(this.url + '/comprar/' + id,
     JSON.stringify(product))
 
   }

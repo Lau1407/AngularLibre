@@ -2,7 +2,7 @@ import { ChangeDetectorRef,Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, UrlSegment } from '@angular/router';
 import { UsuarioService } from '../servicios/usuario.service';
-import { GoogleService } from '../google.service';
+
 
 
 @Component({
@@ -15,9 +15,6 @@ export class LoginComponent implements OnInit {
   message = '';
   isSuccessful: true;
 
-  loggedIn: boolean;
-  user : gapi.auth2.GoogleUser
-
 
   
   
@@ -25,8 +22,6 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private usuarioS: UsuarioService,
     private router:Router,
-    private signInService : GoogleService,
-    private ref : ChangeDetectorRef
   
   ) { }
   ngOnInit(): void {
@@ -38,10 +33,7 @@ export class LoginComponent implements OnInit {
       contrasena:['',[Validators.required,Validators.minLength(6)]]
    
     })
-    this.signInService.observable().subscribe(user =>{
-      this.user = user,
-      this.ref.detectChanges()
-    })
+ 
     
   }
 
@@ -59,14 +51,7 @@ export class LoginComponent implements OnInit {
       this.message='Error en usuario y/o contraseña'
     }})
   }
-  signIn(){
-    this.signInService.signin(),
-    this.isSuccessful = true,
-    this.router.navigate(['/listar-productos'])
-  }
-  signOut(){
-    this.signInService.signOut()
-  }
+  
 
 
 }

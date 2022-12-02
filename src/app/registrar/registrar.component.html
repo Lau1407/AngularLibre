@@ -1,17 +1,17 @@
 <form  [formGroup]="registerForm" class='registro' (ngSubmit)="register()" >
   <h1 >Registrarse</h1>
   <div>
-    <input type="nombre" class="form-control" id="floatingNombre" formControlName="nombre" placeholder="nombre">
-     <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-      <div class="container-error-message" *ngIf="nombre.errors.required">
-        Name is required
-      </div>
-      <div class="container-error-message" *ngIf="nombre.errors.minlength">
-        Name must be at least 5 characters long.
-      </div>
+  <div>
+    <input type="text"
+    class="form-control"
+    name="nombre"
+    formControlName = "nombre"
+    placeholder="Nombre"
+    id="floatingNombre"
+    maxlength="10">
     </div>
  
-  </div>
+  
   <div >
     <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña" >
   </div>
@@ -27,6 +27,7 @@
   <div *ngIf="success" style="color: green;"><button class="loginbutton"routerLink="/login">Login</button></div>
   <br>
   <button class="loginbutton" routerLink="/login"  >Ya tenes usuario?</button>
+</div>
   
 </form>
 

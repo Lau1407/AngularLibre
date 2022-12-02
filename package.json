@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^1.2.5",
     "@angular/animations": "^14.1.0",
     "@angular/cdk": "^14.2.6",
     "@angular/common": "^14.1.0",
@@ -20,6 +21,10 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@ngneat/error-tailor": "^3.0.2",
+    "@types/gapi.auth2": "^0.0.56",
+    "angular-google-auth2": "^1.0.8",
+    "angularx-social-login": "^4.1.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.6",
     "tslib": "^2.3.0",

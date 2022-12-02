@@ -1,10 +1,19 @@
-<form  [formGroup]="registerForm" class='registro' (click)="register()">
+<form  [formGroup]="registerForm" class='registro' (ngSubmit)="register()" >
   <h1 >Registrarse</h1>
-  <div >
-    <input  class="form-control"  type="text" formControlName="nombre" placeholder="Nombre" maxlength="10" >
+  <div>
+    <input type="nombre" class="form-control" id="floatingNombre" formControlName="nombre" placeholder="nombre">
+     <div class="alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+      <div class="container-error-message" *ngIf="nombre.errors.required">
+        Name is required
+      </div>
+      <div class="container-error-message" *ngIf="nombre.errors.minlength">
+        Name must be at least 5 characters long.
+      </div>
+    </div>
+ 
   </div>
   <div >
-    <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña" maxlength="10" >
+    <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña" >
   </div>
   <div >
     <input type="mail" class="form-control" id="floatingEmail" formControlName="email" placeholder="Email" >
@@ -15,7 +24,7 @@
   <button  type="submit" class="registerbutton">Registrarse</button>
   <br>
   <br>
-  <div *ngIf="success" style="color: green;"><button class="loginbutton"routerLink="/login" [disabled]="!registerForm.valid">Login</button></div>
+  <div *ngIf="success" style="color: green;"><button class="loginbutton"routerLink="/login">Login</button></div>
   <br>
   <button class="loginbutton" routerLink="/login"  >Ya tenes usuario?</button>
   

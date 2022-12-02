@@ -20,9 +20,13 @@ export class RegistrarComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      nombre:['',Validators.required],
-      contrasena:['',Validators.required],
-      email:['',Validators.required],
+      nombre:['',[
+        Validators.required,
+        Validators.minLength(6)
+      ]
+      ],
+      contrasena:['',[Validators.required, Validators.minLength(6)]],
+      email:['',[Validators.required, Validators.email]],
       localidad:['',Validators.required]
     }) 
   }

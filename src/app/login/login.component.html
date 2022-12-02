@@ -13,7 +13,12 @@
       <label for="floatingPassword">Password</label>
       <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" >
     </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    <!--
+    <div>
+      <asl-google-signin-button type='icon' size='medium' (click)="signIn()" *ngIf="user == null" class="btn btn-danger">Login with Google</asl-google-signin-button>
+    </div>
+    --->
     <br><br>
     <p *ngIf="message" class="alert alert-danger alert-dismissible fade show">{{message}}</p>
     <div class="pie-form">

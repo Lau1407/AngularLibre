@@ -11,7 +11,12 @@ import {  RegistrarComponent } from './registrar/registrar.component';
 import { LoginComponent } from './login/login.component';
 import { FilterPipe } from './filtrarProductos/filter-product.pipe';
 import { ComprarProductoComponent } from './comprar-producto/comprar-producto.component';
-
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from '@abacritt/angularx-social-login';
+import { provideErrorTailorConfig } from '@ngneat/error-tailor';
 
 
 
@@ -30,6 +35,8 @@ import { ComprarProductoComponent } from './comprar-producto/comprar-producto.co
     LoginComponent,
     FilterPipe,
     ComprarProductoComponent,
+    
+    
 
    
    
@@ -41,10 +48,40 @@ import { ComprarProductoComponent } from './comprar-producto/comprar-producto.co
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SocialLoginModule,
 
   ],
-  providers: [ ],
+  providers: [ {
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '1065566128187-jqd0pmnd09v6s29pjej6sh7f31dstck9.apps.googleusercontent.com'
+          )
+        },
+      ],
+      onError: (err) => {
+        console.error(err);
+      }
+    } as SocialAuthServiceConfig,
+  
+  },
+  provideErrorTailorConfig({
+    errors: {
+      useValue: {
+        required: 'Este campo es requerido',
+        minlength: ({ requiredLength, actualLength }) => 
+                    `Expect ${requiredLength} but got ${actualLength}`,
+        invalidAddress: error => `Address isn't valid`
+      }
+    }
+  })
+
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

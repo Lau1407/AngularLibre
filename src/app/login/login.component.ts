@@ -28,9 +28,9 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       nombre:['',[
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(3)
       ]],
-      contrasena:['',[Validators.required,Validators.minLength(6)]]
+      contrasena:['',[Validators.required,Validators.minLength(3)]]
    
     })
  

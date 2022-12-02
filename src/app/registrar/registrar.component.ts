@@ -36,4 +36,6 @@ export class RegistrarComponent implements OnInit {
       this.success = true
     }})
   }
+
+  get name() { return this.registerForm.get('nombre'); }
 }

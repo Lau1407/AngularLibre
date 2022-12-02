@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from '../model/producto';
 import { ProductoService } from '../servicios/producto.service';
+import { LoginComponent } from '../login/login.component';
+import { Usuario } from '../model/usuario';
 
 @Component({
   selector: 'app-crear-producto',

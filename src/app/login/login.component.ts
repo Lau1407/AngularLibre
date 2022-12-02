@@ -5,6 +5,7 @@ import { UsuarioService } from '../servicios/usuario.service';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -26,10 +27,7 @@ export class LoginComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      nombre:['',[
-        Validators.required,
-        Validators.minLength(3)
-      ]],
+      nombre:['',[Validators.required, Validators.minLength(3)]],
       contrasena:['',[Validators.required,Validators.minLength(3)]]
    
     })
@@ -47,6 +45,7 @@ export class LoginComponent implements OnInit {
       console.log(res),
       this.isSuccessful = true
       this.router.navigate(['/listar-productos'])
+      sessionStorage.setItem('name', formValue.nombre);
     },error : (res)=>{
       this.message='Error en usuario y/o contraseña'
     }})

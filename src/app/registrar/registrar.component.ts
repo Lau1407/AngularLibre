@@ -38,4 +38,10 @@ export class RegistrarComponent implements OnInit {
   }
 
   get name() { return this.registerForm.get('nombre'); }
+
+  get contrasena() { return this.registerForm.get("contrasena"); }
+
+  get email() { return this.registerForm.get("email"); }
+
+  get localidad() { return this.registerForm.get("localidad"); }
 }

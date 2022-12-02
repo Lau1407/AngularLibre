@@ -7,20 +7,43 @@
       <div *ngIf="name.invalid && (name.dirty || name.touched)"  class="alert alert-danger">
 
       <div *ngIf="name.errors?.['required']">
-         Name is required.
+         El nombre es requerido.
        </div>
        <div *ngIf="name.errors?.['minlength']">
-       Name must be at least 6 characters long.
+         El nombre debe ser de 6 caracteres de largo.
        </div>
       </div>
   <div>
     <input type="password" class="form-control" id="floatingPassword" formControlName="contrasena" placeholder="Contraseña" >
+      <div *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)"  class="alert alert-danger">
+
+      <div *ngIf="contrasena.errors?.['required']">
+         Contraseña es requerido
+       </div>
+       <div *ngIf="contrasena.errors?.['minlength']">
+         Contraseña debe ser de 6 caracteres de largo
+       </div>
+      </div>
+  </div>
   </div>
   <div >
     <input type="mail" class="form-control" id="floatingEmail" formControlName="email" placeholder="Email" >
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"  class="alert alert-danger">
+
+      <div *ngIf="email.errors?.['required']">
+         El email es requerido
+      </div>
+      </div>
   </div>
   <div >
     <input type="text" class="form-control" id="floatingLocalidad" formControlName="localidad" placeholder="Localidad" >
+    <div *ngIf="localidad.invalid && (localidad.dirty || localidad.touched)"  class="alert alert-danger">
+
+      <div *ngIf="localidad.errors?.['required']">
+         La localidad es requerida 
+      </div>
+      </div>
+
   </div>
   <button  type="submit" class="registerbutton">Registrarse</button>
   <br>
@@ -29,7 +52,7 @@
   <br>
   <button class="loginbutton" routerLink="/login"  >Ya tenes usuario?</button>
 </div>
-  </div>
+  
   
 </form>
 

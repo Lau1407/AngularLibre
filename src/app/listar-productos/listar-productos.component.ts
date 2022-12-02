@@ -3,6 +3,7 @@ import { ProductoService } from '../servicios/producto.service';
 import { Pipe } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-listar-productos',

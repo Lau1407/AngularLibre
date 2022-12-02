@@ -7,6 +7,9 @@
       </button>
     </div>
     <!-- Lista de productos, se esconde cuando no hay producto -->
+<div>
+  <!--<p>logueado como {{}}</p>-->
+</div>
     <div *ngIf="Producto.length !== 0">
       <h3 class="mb-3 text-center">Lista de productos</h3>
       <div class="form-group">
@@ -16,12 +19,13 @@
         <table class="table table-bordered" >
           <thead>
             <tr>   
-              <th scope="col">id</th>
-              <th scope="col">nombre</th>
-              <th scope="col">descripcion</th>
-              <th scope="col">categoria</th>
-              <th scope="col">precio</th>
-              <th scope="col">stock</th>
+              <th scope="col">Id</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Stock</th>
+              <th scope="col">vendedor</th>
             </tr>
           </thead>
           <tbody>
@@ -33,7 +37,8 @@
               <td>{{ product.Categoria }}</td>
               <td>{{ product.Precio }}</td>
               <td>{{ product.Stock }}</td>
-              <td>
+              <td>{{ product.vendedor}}</td>
+                            <td>
                 <button type="submit" class="btn btn-outline-primary" routerLink="/editar-productos/{{ product.id }}" >Editar</button>
 
                 <button type="button" class="btn btn-outline-primary" (click)="BorrarProducto(product.id)">Borrar</button>    

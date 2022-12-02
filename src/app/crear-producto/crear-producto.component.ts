@@ -28,4 +28,8 @@ export class CrearProductoComponent implements OnInit {
       this.router.navigate(['/listar-productos']);
     });
   }
+
+  getData() {
+    return sessionStorage.getItem('name');
+  }
 }

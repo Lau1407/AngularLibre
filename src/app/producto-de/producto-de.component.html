@@ -1,0 +1,30 @@
+
+<h1>Los productos de {{getData()}} son los siguientes :</h1>
+
+<table class="table table-bordered" >
+    <thead>
+      <tr>   
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr *ngFor="let product of Producto ">     
+        <td>{{ product.id }}</td>
+        <td>{{ product.nombre }}</td>
+        <td>{{ product.Descripcion }}</td>
+        <td>{{ product.Categoria }}</td>
+        <td>{{ product.Precio }}</td>
+        <td>{{ product.Stock }}</td>              
+      <td>
+        </td>             
+      </tr>
+    </tbody>
+  </table>
+
+

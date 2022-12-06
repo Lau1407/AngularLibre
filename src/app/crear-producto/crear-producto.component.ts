@@ -11,7 +11,7 @@ import { Usuario } from '../model/usuario';
   styleUrls: ['./crear-producto.component.css']
 })
 export class CrearProductoComponent implements OnInit {
-  @Input() productDetails = { nombre: '', descripcion: '',categoria:'', precio:"" , stock: "" };
+  @Input() productDetails = { nombre: '', descripcion: '',categoria:'', precio:"" , stock: "", vendedor:"" };
   Producto: any=[];
   constructor(private productoS : ProductoService, private router : Router) {}
 

@@ -15,6 +15,9 @@ export class FilterPipe implements PipeTransform {
       if (producto.Categoria.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         ResultadoProducto.push(producto);
       };
+      if (producto.vendedor.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
+        ResultadoProducto.push(producto);
+      };
     };
     return ResultadoProducto;
   }

@@ -25,6 +25,7 @@
     "@types/gapi.auth2": "^0.0.56",
     "angular-google-auth2": "^1.0.8",
     "angularx-social-login": "^4.1.0",
+    "popper.js": "^1.16.1",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.6.6",
     "zone.js": "~0.11.4"

@@ -7,6 +7,7 @@ import { ListarProductosComponent } from './listar-productos/listar-productos.co
 import { LoginComponent } from './login/login.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { ComprarProductoComponent } from './comprar-producto/comprar-producto.component';
+import { ProductoDeComponent } from './producto-de/producto-de.component';
 
 
 
@@ -19,7 +20,8 @@ const routes: Routes = [
 { path: 'listar-productos', component: ListarProductosComponent },
 { path: 'editar-productos/:id', component: EditarProductosComponent },
 {path : 'registrar', component : RegistrarComponent},
-{path: 'login', component: LoginComponent},]
+{path: 'login', component: LoginComponent},
+{path: 'producto-de/:vendedor', component:ProductoDeComponent}]
 
 
 @NgModule({

@@ -32,6 +32,13 @@ export class ProductoService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  getProductDeVendedor(vendedor: any): Observable<Producto> {
+    return this.http
+      .get<Producto>(this.url + '/verProductos/' + vendedor)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
+
   createProduct(product: any): Observable<Producto> {
     return this.http
       .post<Producto>(

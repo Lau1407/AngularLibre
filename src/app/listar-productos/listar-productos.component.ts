@@ -4,6 +4,7 @@ import { Pipe } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { LoginComponent } from '../login/login.component';
+import { RegistrarComponent } from '../registrar/registrar.component';
 
 @Component({
   selector: 'app-listar-productos',
@@ -14,12 +15,16 @@ export class ListarProductosComponent implements OnInit {
   filtrarproducto = '';
   Producto: any = [];
   id = this.actRoute.snapshot.params['id'];
+
+  admin ={"nombre":"admini", "contrasena":"admini"}
+
   constructor(public productoS: ProductoService,
     public actRoute: ActivatedRoute,
     public router: Router ) { }
 
   ngOnInit(): void {
     this.cargarProductos();
+
   }
 
   cargarProductos() {
@@ -27,6 +32,7 @@ export class ListarProductosComponent implements OnInit {
       this.Producto = data;
     });
   }
+  
 
   BorrarProducto(id : string){
   Swal.fire({
@@ -44,6 +50,13 @@ export class ListarProductosComponent implements OnInit {
 
   }
 
+  getData() {
+    return sessionStorage.getItem('name');
+  }
+  eliminarSession(){
+    sessionStorage.removeItem("name");
+    this.router.navigate(['/login'])
+  }
 
   }
 

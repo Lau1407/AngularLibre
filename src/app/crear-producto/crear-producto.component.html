@@ -23,10 +23,12 @@
         <input type="text" [(ngModel)]="productDetails.stock" class="form-control" placeholder="Stock" maxlength="4">
       </div>
       <div>
-        <input type="text"  value="{{getData()}}" class="field left" class="form-control" readonly >
+        <select [(ngModel)]="productDetails.vendedor"  class="field left" class="form-control" readonly >
+          <option>{{getData()}}</option>
+        </select>
       </div>
       
-//buscar que aparesca en el campo vendedor automaticamente la sessionStorage nombre
+
 
       <div class="form-group">
         <button class="btn btn-success btn-lg btn-block" (click)="agregarProducto(productDetails)">Crear Producto</button>

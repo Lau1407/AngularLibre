@@ -1,3 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">LibreMercado</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Actualmente logueado como {{getData()}}
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" type="submit" routerLink="/producto-de/{{getData()}}" >Ver lista de producto </a>
+        <a class="dropdown-item" type="submit" (click)="eliminarSession()">Cerrar Sesion</a>
+      </div>
+    </div>
+</nav>
+
+
+
+
 <div class="container custom-container-2">
     <!-- Se muestra cuando no hay producto -->
     <div class="no-data text-center" *ngIf="Producto.length == 0">
@@ -8,12 +29,12 @@
     </div>
     <!-- Lista de productos, se esconde cuando no hay producto -->
 <div>
-  <!--<p>logueado como {{}}</p>-->
+ 
 </div>
     <div *ngIf="Producto.length !== 0">
       <h3 class="mb-3 text-center">Lista de productos</h3>
       <div class="form-group">
-        <input type="text" class="form-control" name="filtrarProducto"  placeholder="Search..." [(ngModel)]="filtrarproducto">
+        <input type="text" class="form-control" name="filtrarProducto"  placeholder="Buscar por Nombre, Categoria o Vendedor...." [(ngModel)]="filtrarproducto">
       </div>
       <div class="col-md-12">
         <table class="table table-bordered" >
@@ -37,11 +58,13 @@
               <td>{{ product.Categoria }}</td>
               <td>{{ product.Precio }}</td>
               <td>{{ product.Stock }}</td>
-              <td>{{ product.vendedor}}</td>
-                            <td>
-                <button type="submit" class="btn btn-outline-primary" routerLink="/editar-productos/{{ product.id }}" >Editar</button>
+              <td>{{ product.vendedor }}</td>  
+                       
+            <td>
+              
+                <button *ngIf="product.vendedor === getData() || getData() === admin.nombre && admin.contrasena"   type="submit" class="btn btn-outline-primary" routerLink="/editar-productos/{{ product.id }}" >Editar</button>
 
-                <button type="button" class="btn btn-outline-primary" (click)="BorrarProducto(product.id)">Borrar</button>    
+                <button *ngIf="product.vendedor === getData() || getData() === admin.nombre && admin.contrasena " type="button" class="btn btn-outline-primary" (click)="BorrarProducto(product.id)">Borrar</button>    
                 <button type="button" class="btn btn-outline-primary"  routerLink="/comprar-producto/{{product.id}}">Comprar</button>    
               </td>             
             </tr>

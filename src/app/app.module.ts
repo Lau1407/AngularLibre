@@ -11,6 +11,8 @@ import {  RegistrarComponent } from './registrar/registrar.component';
 import { LoginComponent } from './login/login.component';
 import { FilterPipe } from './filtrarProductos/filter-product.pipe';
 import { ComprarProductoComponent } from './comprar-producto/comprar-producto.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ProductoDeComponent } from './producto-de/producto-de.component';
 
 
 
@@ -30,7 +32,8 @@ import { ComprarProductoComponent } from './comprar-producto/comprar-producto.co
     RegistrarComponent,
     LoginComponent,
     FilterPipe,
-    ComprarProductoComponent
+    ComprarProductoComponent,
+    ProductoDeComponent
     
     
 
@@ -45,6 +48,8 @@ import { ComprarProductoComponent } from './comprar-producto/comprar-producto.co
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSelectModule
+    
   ],
   providers: [ 
 ],
